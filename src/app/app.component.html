@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1> {{title }}</h1>
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> <!-- pasez obiectul hero ca argument ; cand eroul meu este cel selectat, primeste clasa selected-->
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+ <hero-detail [hero]="selectedHero"></hero-detail>  <!-- i se transmite componentei hero-detail eroul selectat in proprietatea ei hero,care e de tip @Input() ; componenta app este parinte pentru componenta hero-detail(hero-detail se foloseste in ea) -->
